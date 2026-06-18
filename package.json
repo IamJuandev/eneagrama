@@ -1,0 +1,17 @@
+{
+  "name": "eneagrama",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eneagrama Relaciones - guia interactiva con contador global de guardados",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  }
+}

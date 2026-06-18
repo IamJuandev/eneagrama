@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del Eneagrama en las Relaciones • Carolina Castellanos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Suppress Tailwind Play CDN production warning (only for this standalone file) -->
+    <script>
+        (function() {
+            const originalWarn = console.warn;
+            console.warn = function(...args) {
+                const msg = args[0];
+                if (typeof msg === 'string' && msg.includes('cdn.tailwindcss.com should not be used in production')) {
+                    return;
+                }
+                originalWarn.apply(console, args);
+            };
+        })();
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --font-sans: 'Inter', system_ui, sans-serif;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, -apple-system, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .ennea-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .ennea-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .modal {
+            animation: modalPop 0.2s ease-out forwards;
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #0f766e, transparent);
+            border-radius: 3px;
+        }
+
+        .type-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .info-row {
+            transition: all 0.2s ease;
+        }
+
+        .info-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .quote-box {
+            border-left: 4px solid;
+        }
+
+        .nav-active {
+            color: #0f766e;
+            font-weight: 600;
+        }
+
+        /* Light theme enhancements */
+        .light-card {
+            background-color: white;
+            border-color: #e2e8f0;
+        }
+
+        .table-header {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+    <!-- Hero / Intro -->
+    <div id="intro" class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-10 sm:pb-12">
+        <div class="max-w-3xl">
+            <img src="crezen-logo.png" alt="Crezen Logo" class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-contain shadow-sm border border-zinc-200 mb-6">
+
+            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-white border border-zinc-200 rounded-3xl mb-6 shadow-sm">
+                <div class="w-2 h-2 bg-teal-600 rounded-full animate-pulse"></div>
+                <span class="text-sm font-medium text-teal-700">Guía práctica de Carolina Castellanos</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tighter font-semibold heading-serif mb-6 text-zinc-950">
+                Cómo actúa tu personalidad<br>en tus relaciones
+            </h1>
+            
+            <p class="text-xl sm:text-2xl text-zinc-600 max-w-md">
+                Entiende los patrones que operan en ti — y en quienes amas — sin que nadie lo haya elegido.
+            </p>
+        </div>
+
+        <!-- Por qué repites lo mismo -->
+        <div class="mt-12 sm:mt-16">
+            <h2 class="text-xl font-semibold tracking-tight mb-6 flex items-center gap-x-3 text-zinc-950">
+                <span>¿Por qué repites lo mismo?</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Card 1 -->
+                <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm">
+                    <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-sync-alt text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-zinc-950">Hay un patrón</h3>
+                    <p class="text-zinc-600 text-[15px]">No es mala suerte ni carácter difícil. Es un mecanismo que aprendiste para sobrevivir.</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm">
+                    <div class="w-10 h-10 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-map text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-zinc-950">Tiene un mapa</h3>
+                    <p class="text-zinc-600 text-[15px]">El Eneagrama muestra cómo opera tu personalidad bajo presión, especialmente en las relaciones.</p>
+                </div>
+                
+                <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-zinc-950">Puedes verlo</h3>
+                    <p class="text-zinc-600 text-[15px]">Cuando lo ves, ya no eres el patrón. Puedes elegir conscientemente cómo actuar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Qué es el Eneagrama -->
+        <div class="mt-12 sm:mt-14 max-w-3xl">
+            <h2 class="text-xl font-semibold tracking-tight mb-4 text-zinc-950">¿Qué es el Eneagrama?</h2>
+            <div class="p-5 bg-teal-50 border border-teal-100 rounded-3xl text-teal-800 text-[15px] leading-relaxed">
+                <p>Es un mapa de cómo tu personalidad aprendió a sobrevivir. Cada eneatipo tiene un miedo raíz que en la infancia fue útil, pero en la adultez se vuelve automático — sobre todo en las relaciones.</p>
+            </div>
+            
+            <div class="mt-5 inline-flex items-center gap-x-2 text-sm bg-emerald-50 border border-emerald-200 text-emerald-700 px-5 py-3 rounded-3xl">
+                <i class="fas fa-info-circle"></i>
+                <span class="font-medium">No necesitas saber tu eneatipo exacto. Lee todos. En alguno vas a reconocer algo tuyo.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Los 9 Eneatipos -->
+    <div id="tipos" class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 gap-y-3">
+            <div>
+                <h2 class="text-3xl sm:text-4xl tracking-tighter font-semibold heading-serif text-zinc-950">Los 9 Eneatipos</h2>
+                <p class="text-zinc-600 mt-2">Explora cómo cada patrón se manifiesta en las relaciones. Haz clic en cualquier tarjeta.</p>
+            </div>
+            <!-- Botón "Descubre uno al azar" eliminado -->
+        </div>
+
+        <!-- Grid de tarjetas -->
+        <div id="types-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5">
+            <!-- Populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Sección de Reflexión Personal -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-16">
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm">
+            <h2 class="text-2xl sm:text-3xl tracking-tighter font-semibold mb-2 text-zinc-950">¿Te identificaste con alguno?</h2>
+            
+            <!-- Enneatypes quick selector - colored pills -->
+            <div class="mb-6">
+                <p class="text-xs text-zinc-500 mb-2">Haz clic en los que te identificaste para agregarlos:</p>
+                <div id="ennea-pills" class="flex flex-wrap gap-2">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-zinc-700 mb-2">Eneatipos con los que te identificaste</label>
+                    <input type="text" id="identified-types" placeholder="Ej: 4 y 9  •  El Individualista y El Pacificador"
+                           class="w-full bg-white border border-zinc-300 focus:border-teal-600 rounded-2xl px-4 py-3 text-sm placeholder:text-zinc-400 transition-colors">
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <button onclick="saveReflection()" 
+                            class="flex-1 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 transition-all text-white font-semibold py-3.5 rounded-2xl text-sm flex items-center justify-center gap-x-2">
+                        <i class="fas fa-save"></i>
+                        <span>Guardar mis reflexiones</span>
+                    </button>
+                    <button onclick="clearReflection()"
+                            class="px-8 border border-zinc-300 hover:bg-zinc-100 transition-colors rounded-2xl text-sm font-medium text-zinc-700">
+                        Limpiar
+                    </button>
+                </div>
+
+                <p id="save-counter" class="text-xs text-zinc-500 text-center pt-1"></p>
+            </div>
+            
+            <!-- Saved reflections -->
+            <div id="saved-reflection" class="hidden mt-8 pt-6 border-t border-zinc-200">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs uppercase tracking-widest text-emerald-600 font-medium">Tus reflexiones guardadas</span>
+                    <button onclick="clearSavedReflection()" class="text-xs text-zinc-500 hover:text-red-500 transition-colors">Borrar todo</button>
+                </div>
+                <div id="saved-content" class="text-sm text-zinc-700 space-y-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div id="final" class="bg-white border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-14 sm:py-16 text-center">
+            <div class="max-w-md mx-auto">
+                <div class="inline-block mb-6">
+                    <i class="fas fa-key text-4xl text-teal-600"></i>
+                </div>
+                
+                <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-4 text-zinc-950">Ver el patrón es el primer acto de libertad.</h3>
+                
+                <p class="text-zinc-600 text-lg">Si te reconociste en alguno de estos patrones, eso no es coincidencia. Es el mapa mostrándote dónde está el trabajo real.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" onclick="if (event.target.id === 'modal') closeModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" 
+             class="modal bg-white border border-zinc-200 w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl max-h-[92vh] flex flex-col">
+            
+            <!-- Modal Header -->
+            <div id="modal-header" class="px-6 sm:px-8 pt-6 sm:pt-8 pb-5 flex items-start justify-between border-b border-zinc-100">
+                <div class="flex items-center gap-x-4">
+                    <div id="modal-icon" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"></div>
+                    <div>
+                        <div class="flex items-center gap-x-3">
+                            <span id="modal-number" class="type-number px-3 py-1 rounded-2xl text-xs tracking-[1px]"></span>
+                            <h3 id="modal-name" class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950"></h3>
+                        </div>
+                        <p id="modal-subtitle" class="text-zinc-600 text-base sm:text-lg"></p>
+                    </div>
+                </div>
+                
+                <button onclick="closeModal()" class="text-zinc-400 hover:text-zinc-600 p-2 -mr-2 transition-colors">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="px-6 sm:px-8 pb-8 overflow-y-auto flex-1 space-y-6 text-[15px] text-zinc-700 pt-2">
+                
+                <!-- Miedo Raíz -->
+                <div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <i class="fas fa-exclamation-triangle text-amber-500"></i>
+                        <span class="font-semibold text-amber-600 tracking-wide text-sm">MIEDO RAÍZ</span>
+                    </div>
+                    <p id="modal-miedo" class="text-zinc-800 leading-relaxed"></p>
+                </div>
+                
+                <!-- Cómo opera -->
+                <div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <i class="fas fa-cogs text-sky-600"></i>
+                        <span class="font-semibold text-sky-700 tracking-wide text-sm">CÓMO OPERA EN SUS RELACIONES</span>
+                    </div>
+                    <p id="modal-como" class="text-zinc-800 leading-relaxed"></p>
+                </div>
+                
+                <!-- Lo que destruye -->
+                <div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <i class="fas fa-exclamation-circle text-rose-500"></i>
+                        <span class="font-semibold text-rose-600 tracking-wide text-sm">LO QUE DESTRUYE SIN DARSE CUENTA</span>
+                    </div>
+                    <p id="modal-destruye" class="text-zinc-800 leading-relaxed"></p>
+                </div>
+                
+                <!-- Lo que suele decir -->
+                <div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <i class="fas fa-comment-dots text-violet-600"></i>
+                        <span class="font-semibold text-violet-700 tracking-wide text-sm">LO QUE SUELE DECIR (O PENSAR)</span>
+                    </div>
+                    <div class="quote-box pl-5 border-violet-400 py-1">
+                        <p id="modal-dice" class="italic text-zinc-700"></p>
+                    </div>
+                </div>
+                
+                <!-- Primer paso -->
+                <div class="pt-2">
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <i class="fas fa-lightbulb text-emerald-600"></i>
+                        <span class="font-semibold text-emerald-700 tracking-wide text-sm">PRIMER PASO PARA INTERRUMPIR EL PATRÓN</span>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
+                        <p id="modal-paso" class="text-emerald-800 leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="px-6 sm:px-8 py-4 sm:py-5 bg-zinc-50 border-t border-zinc-200 flex justify-end text-xs">
+                <button onclick="closeModal()" 
+                        class="px-5 py-2 text-emerald-600 hover:text-emerald-700 font-medium flex items-center gap-x-2 text-sm transition-colors">
+                    <span>Cerrar</span>
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script - light theme config
+        function initializeTailwind() {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            'serif-custom': ['Playfair Display', 'Georgia', 'serif']
+                        }
+                    }
+                }
+            };
+        }
+
+        // Data de los 9 eneatipos (sin cambios en contenido)
+        const enneatypes = [
+            {
+                id: 1,
+                name: "El Perfeccionista",
+                subtitle: "El Reformador",
+                icon: "fa-check-double",
+                color: "#E74C3C",
+                miedo: "Ser imperfecto, corrupto o malo. No ser perfecto o correcto.",
+                como: "En las relaciones, el Eneatipo 1 corrige constantemente a su pareja. No lo hace con maldad — lo hace porque su mente ve el error antes que el ser humano. Critica lo que podría mejorar y olvida celebrar lo que ya es. Su exigencia la aplica primero a sí mismo y luego, sin quererlo, la exporta a quienes ama.",
+                destruye: "La pareja siente que nunca es suficiente. Que siempre hay algo mal. Esa presión sostenida genera distancia emocional aunque haya amor real.",
+                dice: "\"Si lo hicieras bien desde el principio, no tendríamos estos problemas.\"",
+                paso: "Notar cuándo la crítica aparece antes que la gratitud. Preguntarse: ¿estoy protegiendo la relación o estoy protegiendo mi ideal de cómo debería ser?"
+            },
+            {
+                id: 2,
+                name: "El Dador",
+                subtitle: "El Ayudador",
+                icon: "fa-hands-helping",
+                color: "#9B59B6",
+                miedo: "No ser amado si deja de dar.",
+                como: "El Eneatipo 2 da todo antes de que se lo pidan. Cancela sus planes, silencia sus necesidades y pone a la pareja en el centro de su vida. No lo hace solo por amor — lo hace porque inconscientemente cree que si deja de ser útil e indispensable, la van a dejar. Su generosidad tiene un precio invisible que nadie acordó pagar.",
+                destruye: "Con el tiempo la pareja se siente presionada por tanta entrega o, peor, no nota el esfuerzo porque siempre estuvo ahí. El 2 entonces se siente invisible y resentido, sin entender por qué nadie le da lo que él/ella siempre da.",
+                dice: "\"Yo lo doy todo y tú no ves nada.\"",
+                paso: "Identificar una necesidad propia en el día y decirla en voz alta, sin disfrazarla de pregunta o sugerencia. El primer acto de amor real es hacia uno mismo."
+            },
+            {
+                id: 3,
+                name: "El Triunfador",
+                subtitle: "El Logrador",
+                icon: "fa-trophy",
+                color: "#E67E22",
+                miedo: "Ser un fracaso, no valer sin logros.",
+                como: "El Eneatipo 3 convierte la relación en otro proyecto que gestionar. Eficiente, productivo, siempre orientado a resultados. Pero cuando la pareja necesita presencia emocional, el 3 ofrece soluciones. Cuando necesitan ser escuchados, el 3 ya está pensando en el siguiente paso. La intimidad emocional le resulta incómoda porque no sabe cómo \"ganarla\".",
+                destruye: "La pareja siente que vive con alguien exitoso pero ausente. Que hay logros compartidos pero poca conexión real. La relación se ve bien por fuera y se siente vacía por dentro.",
+                dice: "\"¿Cuál es el problema exactamente? Dime qué necesitas y lo resuelvo.\"",
+                paso: "Pasar 20 minutos con la pareja sin agenda, sin celular, sin resolver nada. Solo estar. Notar la incomodidad que genera eso — ahí está el patrón."
+            },
+            {
+                id: 4,
+                name: "El Individualista",
+                subtitle: "El Romántico",
+                icon: "fa-palette",
+                color: "#8E44AD",
+                miedo: "No tener identidad, ser ordinario.",
+                como: "El Eneatipo 4 vive la relación con una intensidad que agota. Ama profundamente pero también sufre profundamente. Idealiza a la pareja al principio y luego siente que algo falta — que la relación nunca llega a ser tan especial como debería. Aleja cuando se acercan y extraña cuando se van. El deseo de lo que no tiene es más fuerte que el disfrute de lo que tiene.",
+                destruye: "La pareja siente que no puede ganar. Si se acerca, el 4 se siente asfixiado. Si da espacio, el 4 siente abandono. Esa danza agota y eventualmente aleja.",
+                dice: "\"Pensé que esta relación sería diferente.\"",
+                paso: "Cuando aparezca la sensación de que \"algo falta\", preguntarse: ¿está faltando algo real o estoy idealizando lo que podría ser? La presencia es el antídoto al anhelo."
+            },
+            {
+                id: 5,
+                name: "El Investigador",
+                subtitle: "El Observador",
+                icon: "fa-brain",
+                color: "#3498DB",
+                miedo: "Ser incompetente, no saber suficiente.",
+                como: "El Eneatipo 5 en las relaciones necesita espacio como el aire que respira. Procesa todo internamente y comparte muy poco. Su pareja siente que hay un muro de cristal — puede verlo pero no tocarlo. El 5 da amor a su manera: siendo leal, confiable, pensativo. Pero rara vez dice lo que siente y casi nunca pide lo que necesita.",
+                destruye: "La pareja interpreta el silencio y la distancia como rechazo o desinterés. El 5 se retira justo cuando la relación necesita más conexión, creando un ciclo donde el vínculo se va enfriando sin que ninguno entienda bien por qué.",
+                dice: "\"Necesito tiempo para pensar.\"",
+                paso: "Compartir un pensamiento interno antes de tenerlo completamente procesado. La vulnerabilidad no requiere certeza — requiere presencia."
+            },
+            {
+                id: 6,
+                name: "El Leal",
+                subtitle: "El Escéptico",
+                icon: "fa-shield-alt",
+                color: "#1ABC9C",
+                miedo: "Ser traicionado, quedarse sin apoyo.",
+                como: "El Eneatipo 6 ama con lealtad absoluta pero desconfía con la misma intensidad. Antes de que su pareja le falle, el 6 ya está anticipando cómo podría fallarle. Prueba constantemente el compromiso del otro — a veces de formas que ni el propio 6 reconoce. Busca seguridad pero sabotea los momentos en que la tiene porque no termina de creerla.",
+                destruye: "La pareja siente que nunca puede ganarse la confianza por completo. Que cada prueba superada viene seguida de otra. Esa dinámica de prueba constante agota incluso al vínculo más sólido.",
+                dice: "\"¿Cómo sé que esta vez será diferente?\"",
+                paso: "Nombrar el miedo específico antes de actuar desde él. \"Tengo miedo de que me abandones\" es muy diferente a revisar el celular de la pareja. El primero conecta. El segundo destruye."
+            },
+            {
+                id: 7,
+                name: "El Entusiasta",
+                subtitle: "El Epicúreo",
+                icon: "fa-grin-beam",
+                color: "#F1C40F",
+                miedo: "Ser atrapado en el dolor o la limitación.",
+                como: "El Eneatipo 7 entra a las relaciones con una energía que enamora. Espontáneo, divertido, lleno de planes. Pero cuando la relación exige profundidad emocional o atravesar un momento difícil, el 7 busca la salida. Cambia de tema, propone algo nuevo, convierte el dolor en humor. Su aversión al sufrimiento le impide estar presente cuando más lo necesitan.",
+                destruye: "La pareja siente que hay amor pero no hay profundidad. Que el 7 está cuando todo es fácil pero desaparece emocionalmente cuando hay que atravesar algo difícil. La relación se queda en la superficie aunque los dos quieran más.",
+                dice: "\"No tiene sentido quedarnos en esto, mejor pensemos en lo que viene.\"",
+                paso: "Quedarse en una conversación difícil hasta el final, sin cambiar el tema. La capacidad de acompañar el dolor de la pareja es la forma más alta de amor que puede dar el 7."
+            },
+            {
+                id: 8,
+                name: "El Desafiador",
+                subtitle: "El Protector",
+                icon: "fa-fist-raised",
+                color: "#C0392B",
+                miedo: "Ser controlado, traicionado o vulnerable.",
+                como: "El Eneatipo 8 ama con una intensidad que puede sentirse como protección o como control según el momento. Es directo, apasionado, tremendamente leal. Pero su mayor miedo — ser vulnerable — lo lleva a construir una armadura que su pareja nunca puede atravesar del todo. El 8 domina antes de que alguien pueda dominarlo. Protege antes de que alguien pueda herirlo.",
+                destruye: "La pareja siente el amor del 8 pero no puede acceder a su mundo interior. La relación tiene intensidad pero le falta ternura. El 8 confunde apertura emocional con debilidad, y eso lo aisla justo de lo que más desea: una conexión real.",
+                dice: "\"Yo no necesito a nadie.\"",
+                paso: "Decir \"me duele\" en lugar de \"me enoja\". La ira del 8 casi siempre cubre un dolor que no sabe cómo mostrar. Nombrar el dolor es el acto de valentía más grande que puede hacer."
+            },
+            {
+                id: 9,
+                name: "El Pacificador",
+                subtitle: "El Mediador",
+                icon: "fa-dove",
+                color: "#27AE60",
+                miedo: "El conflicto, la separación, perder la paz.",
+                como: "El Eneatipo 9 es el compañero más fácil de amar porque se adapta a todo. Cede, evita el conflicto, prioriza la armonía. Pero en ese proceso de adaptación constante, el 9 va desapareciendo. Sus opiniones se diluyen. Sus necesidades se posponen. Después de meses o años, la pareja vive con alguien que nunca dice lo que quiere — y el 9 acumula un resentimiento silencioso que no sabe cómo expresar.",
+                destruye: "La pareja pierde la sensación de estar en una relación de dos. Siente que toma todas las decisiones sola. El 9 cree que ceder es amor — pero la pareja extraña encontrar resistencia, presencia, carácter. Extraña al 9 que parece no estar.",
+                dice: "\"Como tú quieras, a mí me da igual.\"",
+                paso: "Opinar sobre algo pequeño hoy — qué comer, qué película ver — sin ceder. La presencia del 9 en la relación empieza por ocupar espacio en las decisiones cotidianas."
+            }
+        ]
+
+        // Render the grid of cards (light theme friendly)
+        function renderTypesGrid() {
+            const grid = document.getElementById('types-grid')
+            grid.innerHTML = ''
+            
+            enneatypes.forEach(type => {
+                const card = document.createElement('div')
+                card.className = `ennea-card group bg-white border border-zinc-200 hover:border-zinc-300 rounded-3xl p-5 sm:p-6 cursor-pointer flex flex-col shadow-sm`
+                
+                card.innerHTML = `
+                    <div class="flex items-start justify-between mb-5">
+                        <div class="flex items-center gap-x-3">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center text-white shadow-inner flex-shrink-0" 
+                                 style="background-color: ${type.color}">
+                                <i class="fas ${type.icon} text-xl sm:text-2xl"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-x-2">
+                                    <span class="type-number px-2.5 py-px rounded-xl text-white flex-shrink-0" 
+                                          style="background-color: ${type.color}25; color: ${type.color}">
+                                        ${type.id}
+                                    </span>
+                                </div>
+                                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mt-0.5 group-hover:text-zinc-950 transition-colors line-clamp-1">${type.name}</h3>
+                                <p class="text-xs text-zinc-500">${type.subtitle}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1">
+                        <div class="text-sm text-zinc-600 line-clamp-3 leading-snug">
+                            ${type.como.length > 95 ? type.como.substring(0, 95) + '...' : type.como}
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs">
+                        <div class="flex items-center text-emerald-600 group-hover:text-emerald-700 transition-colors">
+                            <span class="font-medium">Explorar</span>
+                            <i class="fas fa-arrow-right ml-1.5 text-xs transition-transform group-hover:translate-x-0.5"></i>
+                        </div>
+                    </div>
+                `
+                
+                // Click to open modal
+                card.onclick = () => openModal(type.id)
+                
+                grid.appendChild(card)
+            })
+        }
+
+        // Render colored enneatype pills for quick selection in feedback section
+        function renderEnneaPills() {
+            const container = document.getElementById('ennea-pills')
+            if (!container) return
+            
+            container.innerHTML = ''
+            
+            enneatypes.forEach(type => {
+                const pill = document.createElement('button')
+                pill.type = 'button'
+                pill.className = `px-3 py-1 text-xs font-medium rounded-2xl transition-all active:scale-95 border`
+                pill.style.backgroundColor = `${type.color}15`
+                pill.style.color = type.color
+                pill.style.borderColor = `${type.color}40`
+                pill.innerHTML = `<span class="font-semibold">${type.id}</span> ${type.name.split(' ')[1] || type.name}`
+                
+                pill.onclick = () => {
+                    const input = document.getElementById('identified-types')
+                    if (!input) return
+                    
+                    let current = input.value.trim()
+                    const nameShort = type.name
+                    
+                    if (current.includes(nameShort) || current.includes(String(type.id))) {
+                        // Remove if already present
+                        current = current.replace(new RegExp(`\\b${type.id}\\b`, 'g'), '')
+                                   .replace(new RegExp(nameShort, 'g'), '')
+                                   .replace(/\s*,\s*|\s+y\s+/g, ' ')
+                                   .trim()
+                        input.value = current
+                    } else {
+                        // Add
+                        if (current.length > 0) current += ', '
+                        input.value = current + `${type.id} (${nameShort})`
+                    }
+                }
+                
+                container.appendChild(pill)
+            })
+        }
+
+        // Open modal with type details (light theme)
+        function openModal(id) {
+            const type = enneatypes.find(t => t.id === id)
+            if (!type) return
+            
+            // Header styling
+            const header = document.getElementById('modal-header')
+            header.style.borderBottom = `1px solid ${type.color}20`
+            
+            // Icon
+            const iconContainer = document.getElementById('modal-icon')
+            iconContainer.innerHTML = `<i class="fas ${type.icon} text-white"></i>`
+            iconContainer.style.backgroundColor = type.color
+            
+            // Texts
+            document.getElementById('modal-number').innerHTML = `ENEATIPO ${type.id}`
+            document.getElementById('modal-number').style.backgroundColor = `${type.color}15`
+            document.getElementById('modal-number').style.color = type.color
+            
+            document.getElementById('modal-name').textContent = type.name
+            document.getElementById('modal-subtitle').textContent = type.subtitle
+            
+            document.getElementById('modal-miedo').textContent = type.miedo
+            document.getElementById('modal-como').textContent = type.como
+            document.getElementById('modal-destruye').textContent = type.destruye
+            document.getElementById('modal-dice').textContent = type.dice
+            document.getElementById('modal-paso').textContent = type.paso
+            
+            // Show modal
+            const modal = document.getElementById('modal')
+            modal.classList.remove('hidden')
+            modal.classList.add('flex')
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden'
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal')
+            modal.classList.remove('flex')
+            modal.classList.add('hidden')
+            document.body.style.overflow = ''
+        }
+
+        // Show a random type (fun interactive feature)
+        function showRandomType() {
+            const randomIndex = Math.floor(Math.random() * enneatypes.length)
+            const randomType = enneatypes[randomIndex]
+            openModal(randomType.id)
+        }
+
+        // Render comparative table - SIMPLIFICADO (solo 3 columnas)
+        // Save personal reflection to localStorage
+        function saveReflection() {
+            const identified = document.getElementById('identified-types').value.trim()
+
+            if (!identified) {
+                alert('Por favor escribe algo antes de guardar.')
+                return
+            }
+
+            const reflection = {
+                identified: identified,
+                date: new Date().toLocaleDateString('es-CO', { 
+                    year: 'numeric', month: 'long', day: 'numeric' 
+                })
+            }
+            
+            localStorage.setItem('eneagrama_reflection', JSON.stringify(reflection))
+
+            // Increment the global save counter (backend)
+            incrementCounter()
+
+            // Show success and reload saved content
+            const savedDiv = document.getElementById('saved-reflection')
+            savedDiv.classList.remove('hidden')
+            loadSavedReflection()
+            
+            // Visual feedback
+            const btns = document.querySelectorAll('button')
+            btns.forEach(btn => {
+                if (btn.textContent.includes('Guardar')) {
+                    const originalText = btn.innerHTML
+                    btn.innerHTML = `<i class="fas fa-check"></i> <span>Guardado</span>`
+                    setTimeout(() => {
+                        if (btn) btn.innerHTML = originalText
+                    }, 1800)
+                }
+            })
+        }
+
+        // Global save counter (backend + SQLite)
+        function updateCounterDisplay(count) {
+            const el = document.getElementById('save-counter')
+            if (!el || typeof count !== 'number') return
+            el.textContent = `${count} ${count === 1 ? 'persona ha' : 'personas han'} guardado su reflexión`
+        }
+
+        async function fetchCounter() {
+            try {
+                const res = await fetch('/api/count')
+                if (!res.ok) return
+                const data = await res.json()
+                updateCounterDisplay(data.count)
+            } catch (e) { /* offline / static preview */ }
+        }
+
+        async function incrementCounter() {
+            try {
+                const res = await fetch('/api/count', { method: 'POST' })
+                if (!res.ok) return
+                const data = await res.json()
+                updateCounterDisplay(data.count)
+            } catch (e) { /* offline / static preview */ }
+        }
+
+        // Load saved reflection from localStorage
+        function loadSavedReflection() {
+            const savedData = localStorage.getItem('eneagrama_reflection')
+            const container = document.getElementById('saved-reflection')
+            const contentDiv = document.getElementById('saved-content')
+            
+            if (!savedData || !container || !contentDiv) return
+            
+            const data = JSON.parse(savedData)
+            
+            contentDiv.innerHTML = `
+                <div class="space-y-4">
+                    ${data.identified ? `
+                    <div>
+                        <div class="text-emerald-600 text-xs font-medium mb-1">TE IDENTIFICASTE CON</div>
+                        <div class="text-zinc-900">${data.identified}</div>
+                    </div>` : ''}
+
+                    <div class="text-[10px] text-zinc-500 pt-2">Guardado el ${data.date}</div>
+                </div>
+            `
+            container.classList.remove('hidden')
+        }
+
+        function clearReflection() {
+            if (confirm('¿Quieres limpiar los campos del formulario?')) {
+                document.getElementById('identified-types').value = ''
+            }
+        }
+
+        function clearSavedReflection() {
+            if (confirm('¿Eliminar tus reflexiones guardadas?')) {
+                localStorage.removeItem('eneagrama_reflection')
+                document.getElementById('saved-reflection').classList.add('hidden')
+                document.getElementById('saved-content').innerHTML = ''
+            }
+        }
+
+        // Keyboard support
+        function setupKeyboardControls() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('modal')
+                    if (!modal.classList.contains('hidden')) {
+                        closeModal()
+                    }
+                }
+                
+                // Press "?" to show random
+                if (e.key === '?' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault()
+                    showRandomType()
+                }
+            })
+            
+            console.log('%c[Tip] Presiona "?" para abrir un tipo al azar', 'color:#666')
+        }
+
+        // Initialize everything
+        function initializeApp() {
+            initializeTailwind()
+            renderTypesGrid()
+            renderEnneaPills()
+            loadSavedReflection()
+            fetchCounter()
+            setupKeyboardControls()
+            
+            // Subtle hint
+            setTimeout(() => {
+                const grid = document.getElementById('types-grid')
+                if (grid && document.getElementById('modal').classList.contains('hidden')) {
+                    grid.style.transition = 'box-shadow 0.3s ease'
+                }
+            }, 4200)
+            
+            // Make sure modal starts hidden
+            const modalEl = document.getElementById('modal')
+            if (modalEl) modalEl.classList.add('hidden')
+            
+            console.log('%c[ Eneagrama Interactivo - Tema Claro ] Página lista y optimizada para móvil.', 'color:#0f766e')
+        }
+
+        // Boot the application
+        window.onload = initializeApp
+    </script>
+</body>
+</html>
